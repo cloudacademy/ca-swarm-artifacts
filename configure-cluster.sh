@@ -70,8 +70,8 @@ else
   # --- AGENT NODE ACTIONS (UPDATED) ---
   echo "This is an AGENT node. Waiting for master to become ready..."
   
-  # Will try 5 times, waiting 10 seconds between each attempt.
-  curl --retry 10 --retry-delay 10 --retry-connrefused "http://${MASTER_PRIVATE_IP}:12345" -o /tmp/join_swarm.sh
+  # Will try 12 times, waiting 10 seconds between each attempt.
+  curl --retry 12 --retry-delay 10 --retry-connrefused "http://${MASTER_PRIVATE_IP}:12345" -o /tmp/join_swarm.sh
   
   echo "Master is ready. Executing join command..."
   # Make the script executable and run it
